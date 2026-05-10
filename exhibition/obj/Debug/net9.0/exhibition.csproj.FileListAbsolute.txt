@@ -1,0 +1,14 @@
+C:\Users\Пользователь\Desktop\uni 2024\2_year\YAPI\8_lab\exhibition\exhibition\bin\Debug\net9.0\exhibition.exe
+C:\Users\Пользователь\Desktop\uni 2024\2_year\YAPI\8_lab\exhibition\exhibition\bin\Debug\net9.0\exhibition.deps.json
+C:\Users\Пользователь\Desktop\uni 2024\2_year\YAPI\8_lab\exhibition\exhibition\bin\Debug\net9.0\exhibition.runtimeconfig.json
+C:\Users\Пользователь\Desktop\uni 2024\2_year\YAPI\8_lab\exhibition\exhibition\bin\Debug\net9.0\exhibition.dll
+C:\Users\Пользователь\Desktop\uni 2024\2_year\YAPI\8_lab\exhibition\exhibition\bin\Debug\net9.0\exhibition.pdb
+C:\Users\Пользователь\Desktop\uni 2024\2_year\YAPI\8_lab\exhibition\exhibition\obj\Debug\net9.0\exhibition.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Пользователь\Desktop\uni 2024\2_year\YAPI\8_lab\exhibition\exhibition\obj\Debug\net9.0\exhibition.AssemblyInfoInputs.cache
+C:\Users\Пользователь\Desktop\uni 2024\2_year\YAPI\8_lab\exhibition\exhibition\obj\Debug\net9.0\exhibition.AssemblyInfo.cs
+C:\Users\Пользователь\Desktop\uni 2024\2_year\YAPI\8_lab\exhibition\exhibition\obj\Debug\net9.0\exhibition.csproj.CoreCompileInputs.cache
+C:\Users\Пользователь\Desktop\uni 2024\2_year\YAPI\8_lab\exhibition\exhibition\obj\Debug\net9.0\exhibition.dll
+C:\Users\Пользователь\Desktop\uni 2024\2_year\YAPI\8_lab\exhibition\exhibition\obj\Debug\net9.0\refint\exhibition.dll
+C:\Users\Пользователь\Desktop\uni 2024\2_year\YAPI\8_lab\exhibition\exhibition\obj\Debug\net9.0\exhibition.pdb
+C:\Users\Пользователь\Desktop\uni 2024\2_year\YAPI\8_lab\exhibition\exhibition\obj\Debug\net9.0\exhibition.genruntimeconfig.cache
+C:\Users\Пользователь\Desktop\uni 2024\2_year\YAPI\8_lab\exhibition\exhibition\obj\Debug\net9.0\ref\exhibition.dll
