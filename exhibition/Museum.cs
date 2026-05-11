@@ -1,6 +1,5 @@
 ﻿using System;
 
-[Serializable]
 public class Exhibit
 {
     public int Id { get; set; }
