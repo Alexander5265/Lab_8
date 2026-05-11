@@ -1,14 +1,11 @@
-﻿using System;
+using System;
 
-class Program
-{
-    static void Main()
-    {
+class Program {
+    static void Main() {
         Console.ForegroundColor = ConsoleColor.Cyan;
         MuseumDatabase.Load();
 
-        while (true)
-        {
+        while (true) {
             Console.Clear();
 
             Console.WriteLine("=== КАТАЛОГ МУЗЕЙНЫХ ЭКСПОНАТОВ ===");
@@ -22,8 +19,7 @@ class Program
 
             string choice = Console.ReadLine();
 
-            switch (choice)
-            {
+            switch (choice) {
                 case "1":
                     MuseumDatabase.ShowAll();
                     Pause();
@@ -53,10 +49,8 @@ class Program
         }
     }
 
-    static void AddExhibit()
-    {
-        try
-        {
+    static void AddExhibit() {
+        try {
             Console.Write("ID: ");
             int id = int.Parse(Console.ReadLine());
 
@@ -70,8 +64,7 @@ class Program
             int century = int.Parse(Console.ReadLine());
 
             DateTime date;
-            while (true)
-            {
+            while (true) {
                 Console.Write("Дата создания (дд.мм.гггг): ");
 
                 if (DateTime.TryParse(Console.ReadLine(), out date))
@@ -93,18 +86,15 @@ class Program
 
             Console.WriteLine("Экспонат добавлен.");
         }
-        catch
-        {
+        catch {
             Console.WriteLine("Ошибка ввода данных.");
         }
 
         Pause();
     }
 
-    static void DeleteExhibit()
-    {
-        try
-        {
+    static void DeleteExhibit() {
+        try {
             Console.Write("Введите ID: ");
             int id = int.Parse(Console.ReadLine());
 
@@ -115,16 +105,14 @@ class Program
             else
                 Console.WriteLine("Экспонат не найден.");
         }
-        catch
-        {
+        catch {
             Console.WriteLine("Ошибка ввода.");
         }
 
         Pause();
     }
 
-    static void QueriesMenu()
-    {
+    static void QueriesMenu() {
         Console.Clear();
 
         Console.WriteLine("1. Экспонаты определенного века");
@@ -136,8 +124,7 @@ class Program
 
         string q = Console.ReadLine();
 
-        switch (q)
-        {
+        switch (q) {
             case "1":
                 Console.Write("Введите век: ");
                 int century = int.Parse(Console.ReadLine());
@@ -185,8 +172,7 @@ class Program
         Pause();
     }
 
-    static void Pause()
-    {
+    static void Pause() {
         Console.WriteLine("\nНажмите Enter...");
         Console.ReadLine();
     }
