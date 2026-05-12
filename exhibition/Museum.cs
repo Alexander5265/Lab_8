@@ -1,8 +1,7 @@
 using System;
 
 [Serializable]
-internal class Exhibit
-{
+internal class Exhibit {
     public int Id { get; set; }
 
     public string Name { get; set; }
@@ -24,8 +23,7 @@ internal class Exhibit
         int century,
         DateTime creationDate,
         double estimatedValue,
-        bool isOnDisplay)
-    {
+        bool isOnDisplay) {
         Id = id;
         Name = name;
         Author = author;
@@ -35,8 +33,7 @@ internal class Exhibit
         IsOnDisplay = isOnDisplay;
     }
 
-    public override string ToString()
-    {
+    public override string ToString() {
         return
             $"ID: {Id}\n" +
             $"Название: {Name}\n" +
