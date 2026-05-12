@@ -1,8 +1,9 @@
 using System;
 
-class Program {
-    static void Main() {
+internal class Program {
+    private static void Main() {
         Console.ForegroundColor = ConsoleColor.Cyan;
+
         MuseumDatabase.Load();
 
         while (true) {
@@ -15,7 +16,7 @@ class Program {
             Console.WriteLine("4. Запросы");
             Console.WriteLine("0. Выход");
 
-            Console.Write("Выбор: ");
+            Console.Write("\nВыбор: ");
 
             string choice = Console.ReadLine();
 
@@ -49,7 +50,7 @@ class Program {
         }
     }
 
-    static void AddExhibit() {
+    private static void AddExhibit() {
         try {
             Console.Write("ID: ");
             int id = int.Parse(Console.ReadLine());
@@ -63,24 +64,33 @@ class Program {
             Console.Write("Век: ");
             int century = int.Parse(Console.ReadLine());
 
-            DateTime date;
+            DateTime creationDate;
+
             while (true) {
                 Console.Write("Дата создания (дд.мм.гггг): ");
 
-                if (DateTime.TryParse(Console.ReadLine(), out date))
+                if (DateTime.TryParse(Console.ReadLine(), out creationDate))
+                {
                     break;
+                }
 
                 Console.WriteLine("Неверный формат даты!");
             }
 
             Console.Write("Стоимость: ");
-            double value = double.Parse(Console.ReadLine());
+            double estimatedValue = double.Parse(Console.ReadLine());
 
             Console.Write("На выставке (true/false): ");
-            bool display = bool.Parse(Console.ReadLine());
+            bool isOnDisplay = bool.Parse(Console.ReadLine());
 
-            Exhibit exhibit = new Exhibit(
-                id, name, author, century, date, value, display);
+            var exhibit = new Exhibit(
+                id,
+                name,
+                author,
+                century,
+                creationDate,
+                estimatedValue,
+                isOnDisplay);
 
             MuseumDatabase.Add(exhibit);
 
@@ -93,17 +103,16 @@ class Program {
         Pause();
     }
 
-    static void DeleteExhibit() {
+    private static void DeleteExhibit() {
         try {
             Console.Write("Введите ID: ");
             int id = int.Parse(Console.ReadLine());
 
             bool result = MuseumDatabase.DeleteById(id);
 
-            if (result)
-                Console.WriteLine("Удаление выполнено.");
-            else
-                Console.WriteLine("Экспонат не найден.");
+            Console.WriteLine(result
+                ? "Удаление выполнено."
+                : "Экспонат не найден.");
         }
         catch {
             Console.WriteLine("Ошибка ввода.");
@@ -112,7 +121,7 @@ class Program {
         Pause();
     }
 
-    static void QueriesMenu() {
+    private static void QueriesMenu() {
         Console.Clear();
 
         Console.WriteLine("1. Экспонаты определенного века");
@@ -120,33 +129,32 @@ class Program {
         Console.WriteLine("3. Проверить наличие экспоната");
         Console.WriteLine("4. Количество экспонатов");
 
-        Console.Write("Выбор: ");
+        Console.Write("\nВыбор: ");
 
-        string q = Console.ReadLine();
+        string choice = Console.ReadLine();
 
-        switch (q) {
+        switch (choice) {
             case "1":
                 Console.Write("Введите век: ");
                 int century = int.Parse(Console.ReadLine());
 
-                var byCentury =
-                    MuseumDatabase.GetByCentury(century);
+                var byCentury = MuseumDatabase.GetByCentury(century);
 
-                foreach (var e in byCentury)
-                    Console.WriteLine(e);
+                foreach (var exhibit in byCentury) {
+                    Console.WriteLine(exhibit);
+                }
 
                 break;
 
             case "2":
                 Console.Write("Введите букву: ");
-                char letter =
-                    char.Parse(Console.ReadLine());
+                char letter = char.Parse(Console.ReadLine());
 
-                var byLetter =
-                    MuseumDatabase.GetByFirstLetter(letter);
+                var byLetter = MuseumDatabase.GetByFirstLetter(letter);
 
-                foreach (var e in byLetter)
-                    Console.WriteLine(e);
+                foreach (var exhibit in byLetter) {
+                    Console.WriteLine(exhibit);
+                }
 
                 break;
 
@@ -154,8 +162,7 @@ class Program {
                 Console.Write("Введите название: ");
                 string name = Console.ReadLine();
 
-                bool exists =
-                    MuseumDatabase.Exists(name);
+                bool exists = MuseumDatabase.Exists(name);
 
                 Console.WriteLine(exists
                     ? "Экспонат найден."
@@ -165,14 +172,18 @@ class Program {
 
             case "4":
                 Console.WriteLine(
-                    $"Количество: {MuseumDatabase.CountExhibits()}");
+                    $"Количество экспонатов: {MuseumDatabase.CountExhibits()}");
+                break;
+
+            default:
+                Console.WriteLine("Неверный выбор.");
                 break;
         }
 
         Pause();
     }
 
-    static void Pause() {
+    private static void Pause() {
         Console.WriteLine("\nНажмите Enter...");
         Console.ReadLine();
     }
